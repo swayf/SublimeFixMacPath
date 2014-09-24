@@ -15,7 +15,7 @@ def getSysPath():
 	sysPath = Popen(command, stdout=PIPE, shell=True, env=originalEnv).stdout.read()
 
 	# Decode the byte array into a string, remove trailing whitespace, remove trailing ':'
-	return sysPath.decode("utf-8").rstrip().rstrip(':')
+	return sysPath.decode("utf-8").split()[-1].rstrip(':')
 
 
 def fixPath():
